@@ -56,7 +56,7 @@ function removecart() {
 function addItemsTolocalStorge(Iditem, imageItem, nameItem, priceItem, descriptionItem) {
     if (checkIsUserLogin() == false) {
         var butefelAlert = document.getElementById("butefelAlert")
-        var butefelAlertPTag = butefelAlert.getElementsByTagName('p')
+         var butefelAlertPTag = document.querySelector("#butefelAlert > p")
         var butefelAlertText = "You must login to add food to cart"
         butefelAlertPTag.innerText = butefelAlertText
         butefelAlert.classList.remove("displayNone")
