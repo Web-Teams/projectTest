@@ -77,7 +77,7 @@ function checkOutOrder() {
             // console.log(dataArryusers[i].history)
             dataArryusers[i].cart = [];
             localStorage.setItem("usersArray", JSON.stringify(dataArryusers));
-            localStorage.setItem("currentUser", dataArryusers[i])
+             localStorage.setItem("currentUser", JSON.stringify(dataArryusers[i]))
         }
     }
 
