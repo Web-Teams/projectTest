@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/13000a274c/UntitledProject/style.css">
+    <link rel="stylesheet" href="Stylesheets/footer.css" />
+    <link rel="stylesheet" href="Stylesheets/header.css" />
+    <link rel="stylesheet" href="Stylesheets/about.css" />
+    <link rel="stylesheet" href="Sign Up Page/signUpPage.css">
+    <link rel="stylesheet" href="Login Page/loginPage.css">
+    <link rel="stylesheet" href="Stylesheets/search.css">
+    <link rel="stylesheet" href="Stylesheets/cart.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h2 class="logoImageContainer">
+                <img class="logoImage" src="footer imgs/loggoTest.png">
+            </h2>
+            <ul>
+                <li>
+                    <a id="homeLink" href="home.html">Home</a>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <!-- <li><a href="#">Blog</a></li> -->
+                <li>
+                    <a id="contactLink" href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a id="contactLink" href="booking.html">Booking</a>
+                </li>
+                <li>
+                    <a id="contactLink" class="active" href="checkPage.html">CheckOut</a>
+                </li>
+            </ul>
+            <div class="buttons">
+                <i onclick="displaySearch()" class="fa-solid fa-magnifying-glass"></i>
+
+
+
+                <div id="searchContainer" class="visibleSearch">
+
+                    <input oninput="searchInputWords(this.value)" id="searchInput" type="search">
+
+                    <select onchange="searchInputWords('')" name="search" id="selectCategoryId">
+
+                        <option value="All">All</option>
+                        <option value="Main Courses">Main Courses</option>
+                        <option value="Appetizers">Appetizers</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Desserts">Desserts</option>
+
+                    </select>
+                    <div id="containCreatedElementsSearch">
+
+                    </div>
+
+                </div>
+                <i onclick="toggleCart()" id="cartBtn" class="fa-solid fa-cart-shopping"></i>
+                <button id="signInBtn" onclick="toggleSignInForm()" type="submit">Sign in</button>
+                <div id="userNameContainer" class="displayNone">
+                    <span class="userNameSpan">
+                        <span> <i class="fa-solid fa-user"></i>
+                            <i id="logoutUser" class="fa-solid fa-right-from-bracket" onclick="logoutUser()"></i></span>
+
+                        <p id="userName"> Ammar Ahmed Shafiq</p>
+
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <aside>
+        <div id="cart1" class="cart ">
+
+            <button class="cartCancelButton" onclick="removecart() "><i class="fa-solid fa-xmark"></i></button>
+            <div id="cartBody">
+                <div class="cartItemsContainer">
+                    <div class="cartItem" data-id="25">
+                        <img class="myitemImage" src="./home imgs/Burger_With_Neon.jpg" alt="">
+                        <p class="itemName">Burger Name</p>
+
+                        <div class="plusAndMinus">
+                            <i class="fa-solid fa-plus"></i>
+                            <p class="amount"> 1 </p>
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                        <p class="itemPrice">500 $</p>
+                        <button class="deleteItem"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button class="cartCancelButton" onclick="removecart() "><i class="fa-solid fa-xmark"></i></button> -->
+
+            <!-- 
+          <div class="firstItem" data-id="25">
+          <img class="myitemImage" src="./home imgs/Burger_With_Neon.jpg" alt="">
+          <p class="itemName">Burger Name</p>
+          <p> 1 </p>  ----------------
+          <p class="itemPrice">500 $</p>
+         </div>
+          <hr>
+        
+         <div class="firstItem">
+          <img class="myitemImage" src="./home imgs/Burger_With_Neon.jpg" alt="">
+          <p class="itemName">Burger Name</p>
+          <p class="itemPrice">500 $</p>
+         </div>
+        
+          <hr> -->
+
+
+        </div>
+
+    </aside>
+    <aside>
+
+        <!-- Login Page -->
+        <div id="login" class="invisible">
+            <div class="closeIcon" id="signInCloseBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div id="loginHeader">
+                <h1>Welcome Back !</h1>
+                <h3>Enter your credenital for login</h3>
+            </div>
+
+            <form id="loginForm" method="post" novalidate>
+
+                <input type="email" id="loginemail" placeholder="Enter your email" required>
+                <br>
+
+                <input type="password" id="loginpassword" placeholder="Password" required>
+                <br>
+                <button id="submit" type="submit">Login </button>
+                <p id="buttonForSignUp">If You Don't Have an account <a onclick="toggleSignUpForm()" href="#">signUp</a>
+                </p>
+                <br>
+            </form>
+
+        </div>
+
+
+
+        <!-- Sign Up Page -->
+        <div id="signUp" class="invisible">
+            <div class="closeIcon" id="signUpCloseBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div id="signUpHeader">
+                <h1>Sign Up</h1>
+                <h3>Create your account</h3>
+            </div>
+
+            <form method="post" id="myForm" novalidate>
+
+                <!-- <label for="fName">First Name</label> -->
+                <input type="text" id="fName" placeholder="First Name" required>
+                <br>
+
+                <!-- <label for="lName">Last Name</label> -->
+                <input type="text" id="lName" placeholder="Last Name" required>
+                <br>
+
+                <!-- <label for="email">Email </label> -->
+                <input type="email" id="signUpemail" placeholder=" Email" required>
+                <br>
+
+                <!-- <label for="password">Password</label> -->
+                <input type="password" id="signUpPassword" placeholder="Password" required>
+                <br>
+
+
+                <button id="submit" onclick="" type="submit">Sign Up</button>
+
+            </form>
+
+            <p>OR</p>
+
+            <button onclick="" id="easySubmit" type="button">
+                <img id="googleIcon" src="./Sign Up Page/google_icon.png" alt=""> Login with Google </button>
+
+        </div>
+
+
+    </aside>
+    <aside>
+        <div class="butefelAlert displayNone" id="butefelAlert">
+            <button onclick="removeButfelAlert()" class="closeButfelAlert">X</button>
+            <p></p>
+        </div>
+
+
+    </aside>
+
+    <aside>
+        <div class="searchPopUpGrandContainer visibleSearch">
+
+            <div class="searchPopUpBtnContainer">
+                <button onclick="closePopUp()" class="searchPopUpBtn">X</button>
+            </div>
+            <div class="searchPopUpParentWImg">
+
+                <img class="searchPopUpImg" src="https://via.placeholder.com/217x231" alt="" />
+
+                <div class="searchPopUpDesTitlePrice>">
+
+                    <h2 class="searchPopUpTitle">Grilled Salmon with Lemon Dill Sauce</h2>
+
+                    <div class="searchPopUpDescription">Freshly grilled salmon fillet topped with a creamy lemon dill
+                        sauce,
+                        served
+                        with asparagus and
+                        roasted
+                        potatoes.</div>
+
+                    <p class="searchPopUpPrice">$ 10.00</p>
+
+                    <button id="addCartBtnForSearch" class="searchPopUpBtn"> Add to cart</button>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </aside>
+    <style>
+        #orderItemName {
+            width: 200px;
+            overflow: hidden;
+
+            /* position: relative;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap; */
+
+        }
+
+        .LongText {
+            /* transform: translateX(0); */
+            transition: transform 5s linear 1s;
+            display: inline-block;
+            width: 200px;
+            /* padding: 10px; */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: default;
+
+        }
+
+        .ShortText {
+            cursor: default;
+        }
+
+        /* .LongText:hover {
+            transform: translateX(-100%);
+            overflow: visible;
+            width: 200px;
+            white-space: nowrap;
+
+            text-overflow: unset;
+            cursor: none;
+             display: inline-block; */
+        /*
+
+        } */
+
+        #shoppingCart {
+            display: flex;
+            color: white;
+            justify-content: space-between;
+        }
+
+        #checkOutBody {
+            width: 60%;
+        }
+
+        #checkOutBodyRight {
+            width: 40%;
+            padding: 20px;
+            position: sticky;
+            /* top: 12%; */
+            top: 40%;
+            align-self: flex-start;
+
+        }
+
+        #checkOutInfo {
+            padding: 20px;
+        }
+
+        #checkOutInfoHeader {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #checkOutInfoBody {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        #orderItemContainer {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            border: 2px #ff00001f solid;
+
+        }
+
+        #promocodeContainer {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        #promocodeInput {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #applyPromocode {
+            padding: 10px;
+            margin: 10px;
+            width: 120px;
+            height: 50px;
+            color: white;
+            font-size: -468px;
+            font-weight: 400;
+            border: 2px solid transparent;
+            border-radius: 59px;
+            background: linear-gradient(90deg, #A4150D 9%, #0C163F 73%), linear-gradient(90deg, #240804 6%, #440508 28%, #0A0B1F 66%, #0B0E15 100%);
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #checkButton:hover,
+        #applyPromocode:hover {
+            background: linear-gradient(90deg, #685e5e45 9%, #ffffff45 73%), linear-gradient(90deg, #A4150D 9%, #0C163F 73%), linear-gradient(90deg, #240804 6%, #440508 28%, #0A0B1F 66%, #0B0E15 100%);
+            background-clip: padding-box, padding-box, border-box;
+            background-origin: padding-box, padding-box, border-box;
+            transform: scale(1.05, 1.05);
+
+        }
+
+        #checkButton:active,
+        #applyPromocode:active {
+            background: linear-gradient(90deg, #240804 6%, #440508 28%, #0A0B1F 66%, #0B0E15 100%), linear-gradient(90deg, #A4150D 9%, #0C163F 73%);
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+        }
+
+        #priceDetails {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+
+        #priceBeforeDiscount {
+            text-decoration: line-through;
+        }
+
+        #checkOutContainer {
+            padding: 10px;
+            margin: 10px;
+            color: #fff;
+        }
+
+        #checkButton {
+            padding: 10px;
+            margin: 10px;
+            height: 50px;
+            color: white;
+            font-size: -468px;
+            font-weight: 400;
+            border: 2px solid transparent;
+            border-radius: 59px;
+            background: linear-gradient(90deg, #A4150D 9%, #0C163F 73%), linear-gradient(90deg, #240804 6%, #440508 28%, #0A0B1F 66%, #0B0E15 100%);
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        /* 
+        <div id="totalPriceHeader">Total Price:</div>
+                            <div id="totalPrice">50$</div>
+                            <div id="priceBeforeDiscount"> 100$</div>
+                            <div id="discountPercentage"> -50%</div> */
+        #totalPriceHeader {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffccc9;
+            text-shadow: 2px 2px 4px #000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #totalPrice {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px #000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #priceBeforeDiscount {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #999;
+            text-decoration: line-through;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #priceBeforeDiscount:hover {
+            color: #A4150D;
+        }
+
+        #discountPercentage {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff700;
+            text-shadow: 2px 2px 4px #000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #promocodeResult {
+            font-size: 20px;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 10px 10px 10px;
+            color: #ffffff;
+            border-radius: 10px;
+            border: 2px solid #fff70052;
+            text-shadow: 2px 2px 4px #000;
+            transition: all 0.3s ease-in-out;
+            background-color: #fffffe54;
+        }
+
+        #promocodeResult:hover {
+            color: #A4150D;
+        }
+
+        #promocodeResult div {
+            text-align: start;
+            font-size: 14px;
+            color: #ffffffc9;
+            text-shadow: 2px 2px 4px #00000091;
+
+        }
+
+        div#controlItemQuantity i {
+            margin: 2px;
+            background-color: #ffffff52;
+            padding: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        div#controlItemQuantity i:hover {
+            background: rgb(156 20 20 / 54%);
+        }
+
+        div#controlItemQuantity i:active {
+            color: #00000078;
+            /* background: #ffffff52; */
+            background: rgb(156 20 20 / 54%);
+
+        }
+
+        div#orderItemDelete i:active {
+            color: #ffffff70;
+        }
+    </style>
+    <main>
+        <section>
+            <div id="checkOutContainer">
+                <h1>Shopping Cart</h1>
+                <div id="shoppingCart">
+                    <div id="checkOutBody">
+                        <div id="checkOutInfo">
+                            <div id="checkOutInfoHeader">
+                                <h1>Order Summary</h1>
+                            </div>
+                            <div id="checkOutInfoBody">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="checkOutBodyRight" data-discount="0" data-discountPercentage="0" data-totalPrice="50"
+                        data-totalPriceBeforeDiscount="100" data-promocode="ajK#12Y" data-promocodePercentage="50">
+                        <div id="priceDetails">
+                            <div id="totalPriceHeader">Total Price:</div>
+                            <div id="totalPrice"></div>
+                            <div id="priceBeforeDiscount" class="displayNone"></div>
+                            <div id="discountPercentage" class="displayNone"></div>
+                            <!-- <div id="priceBeforeDiscount" class="displayNone"> 100$</div>
+                            <div id="discountPercentage" class="displayNone"> -50%</div> -->
+                            <button id="checkButton"> Check Out</button>
+                        </div>
+
+                        <hr>
+                        <div id="promocodeResult">
+                            <div>Promocode Applied:</div>
+                            <span>No Promocode Applied</span>
+                        </div>
+                        <div id="promocodeContainer">
+                            <div id="promocode">
+                                <input id="promocodeInput" type="text" placeholder="Enter Promocode">
+                                <button id="applyPromocode">Apply</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="flexParent">
+            <!-- left -->
+            <div id="leftWords">
+                <img class="footer-logo" src="footer imgs/loggoTest.png" alt="">
+
+                <p>Our wondrefull resturant <br /></p>
+            </div>
+
+            <!-- center -->
+            <div id="centerWords">
+                Weekly offer <br />
+                pre - order options <br />
+                Book a table
+            </div>
+            <!-- third -->
+            <div id="thirdWords">
+                Yosry ragheb street <br />
+                Assuit city <br />
+                &copy; 2024 all right reserved
+            </div>
+            <!-- last -->
+            <div id="contactWords">
+                Get in touch <br />
+                <span>
+                    <img class="phone" src="./footer imgs/Phone.png" alt="" />
+                    <a href="tel"> 010-1010-1010</a></span><br />
+
+                <a href="#">
+                    <img src="./footer imgs/Facebook Circled.png" alt="" /></a>
+                <a href="#">
+                    <img src="./footer imgs/Twitter Circled.png" alt="" /></a>
+                <a href="#">
+                    <img src="./footer imgs/Instagram Circle.png" alt="" /></a>
+                <a href="#">
+                    <img src="./footer imgs/LinkedIn Circled.png" alt="" /></a>
+            </div>
+        </div>
+    </footer>
+    <script src="checkPage.js"></script>
+    <script src="loginAndRegister.js"></script>
+    <script src="search.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

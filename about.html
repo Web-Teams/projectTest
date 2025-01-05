@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Stylesheets/footer.css" />
+    <link rel="stylesheet" href="Stylesheets/header.css" />
+    <link rel="stylesheet" href="Stylesheets/about.css" />
+    <link rel="stylesheet" href="Sign Up Page/signUpPage.css">
+    <link rel="stylesheet" href="Login Page/loginPage.css">
+    <link rel="stylesheet" href="Stylesheets/search.css">
+    <link rel="stylesheet" href="Stylesheets/cart.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h2 class="logoImageContainer">
+                <img class="logoImage" src="footer imgs/loggoTest.png">
+            </h2>
+            <ul>
+                <li>
+                    <a id="homeLink" href="home.html">Home</a>
+                </li>
+                <li><a class="active" href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <!-- <li><a href="#">Blog</a></li> -->
+                <li>
+                    <a id="contactLink" href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a id="contactLink" href="booking.html">Booking</a>
+                </li>
+                <li>
+                    <a id="contactLink" href="checkPage.html">CheckOut</a>
+                </li>
+            </ul>
+            <div class="buttons">
+                <i onclick="displaySearch()" class="fa-solid fa-magnifying-glass"></i>
+
+
+
+                <div id="searchContainer" class="visibleSearch">
+
+                    <input oninput="searchInputWords(this.value)" id="searchInput" type="search">
+
+                    <select onchange="searchInputWords('')" name="search" id="selectCategoryId">
+
+                        <option value="All">All</option>
+                        <option value="Main Courses">Main Courses</option>
+                        <option value="Appetizers">Appetizers</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Desserts">Desserts</option>
+
+                    </select>
+                    <div id="containCreatedElementsSearch">
+
+                    </div>
+
+                </div>
+                <i onclick="toggleCart()" id="cartBtn" class="fa-solid fa-cart-shopping"></i>
+                <button id="signInBtn" onclick="toggleSignInForm()" type="submit">Sign in</button>
+                <div id="userNameContainer" class="displayNone">
+                    <span class="userNameSpan">
+                        <span> <i class="fa-solid fa-user"></i>
+                            <i id="logoutUser" class="fa-solid fa-right-from-bracket" onclick="logoutUser()"></i></span>
+
+                        <p id="userName"> Ammar Ahmed Shafiq</p>
+
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <aside id="cartAside"></aside>
+    <aside id="lloginAndSignUpContainer">
+    </aside>
+    <aside id="searchPopUpAside"></aside>
+    <main>
+        <section id="aboutSection">
+            <h2>About Our Restaurant</h2>
+            <p>Welcome to our restaurant, a culinary haven where flavors meet passion and dining becomes an
+                unforgettable experience. Nestled in the heart of the city, our establishment has been serving guests
+                with dedication and pride, ensuring that every visit is a delightful journey for the senses. Our story
+                began with a vision to create a place where people from all walks of life could come together to enjoy
+                exquisite cuisine in a warm and inviting atmosphere. At the core of our philosophy is a commitment to
+                using the freshest, locally sourced ingredients. We believe that great food starts with great
+                ingredients, which is why we partner with local farmers and suppliers who share our dedication to
+                quality and sustainability. Our menu is a celebration of seasonal produce, expertly crafted into dishes
+                that showcase the flavors of the region while paying homage to traditional recipes from around the
+                world.<br><br>Our team of talented chefs brings a wealth of experience and creativity to the kitchen,
+                crafting each dish with meticulous attention to detail. From the delicate balance of spices in our
+                signature dishes to the artful presentation that graces each plate, every element is thoughtfully
+                considered to provide our guests with an exceptional dining experience. Whether you're indulging in a
+                multi-course meal or enjoying a casual bite, our menu offers something for everyone. The dining
+                experience at our restaurant is not just about the food; it's about the ambiance and the service that
+                accompanies it. Our carefully designed interior reflects a harmonious blend of elegance and comfort,
+                creating an environment where guests can relax and savor their meals. Our attentive staff is dedicated
+                to providing impeccable service, ensuring that every visit is personalized and memorable.<br><br><br>
+                Our doors are always open, and we invite you to join us on this gastronomic adventure. Bon appétit!
+            </p>
+        </section>
+    </main>
+    <aside>
+        <div class="butefelAlert displayNone" id="butefelAlert">
+            <button onclick="removeButfelAlert()" class="closeButfelAlert">X</button>
+            <p>You must login to add food to cart</p>
+        </div>
+    </aside>
+
+    <script src="testBuildHtml.js"></script>
+    <script src="checkPage.js"></script>
+    <script src="loginAndRegister.js"></script>
+    <script src="search.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

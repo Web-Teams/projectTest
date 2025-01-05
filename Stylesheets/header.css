@@ -1,0 +1,189 @@
+header * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+aside * {
+    z-index: 101;
+}
+
+header {
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+nav {
+    background-color: rgba(50, 50, 50, 0.9);
+    width: 80%;
+    margin: 20px 10%;
+    border-radius: 20px;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    color: white;
+}
+
+
+.header h1 {
+    font-family: cursive, Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    max-width: 35%;
+    margin-top: 100px;
+    border-radius: 10px;
+    color: whitesmoke;
+    background-color: rgb(0, 0, 0, 0.8);
+    width: fit-content;
+    cursor: default;
+}
+
+.header p {
+    cursor: default;
+    margin-top: 15px;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(0, 0, 0, 0.8);
+    width: fit-content;
+    padding: 5px;
+}
+
+header nav h2 {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+header nav h2:hover {
+    color: orange;
+}
+
+header .logoImageContainer {
+    position: relative;
+}
+
+header .logoImage {
+
+    width: 110px;
+    position: absolute;
+    left: 10px;
+    top: -36px;
+
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+header nav ul li a {
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    border-bottom: 2px solid orange;
+}
+
+header nav ul li a:hover,
+header .buttons i:hover {
+    color: orange;
+}
+
+header a.active {
+    color: orangered;
+    border-bottom: 2px solid orangered;
+}
+
+header .buttons button:hover,
+header .paragraphs button:hover,
+header input[type="submit"]:hover,
+header form span:hover {
+    background-color: orange;
+    color: white;
+}
+
+header button {
+    padding: 5px 10px;
+    font-size: 1.4rem;
+}
+
+header button,
+header input[type="submit"] {
+    background-color: black;
+    cursor: pointer;
+    color: orange;
+    box-shadow: 0px 0px 12px 5px;
+}
+
+header .buttons i {
+    cursor: pointer;
+    padding-right: 15px;
+    transition: 0.3s;
+    margin: 5px 0;
+}
+
+#cartBtn {
+    border-right: 2px solid white;
+}
+
+header .buttons button {
+    margin-left: 10px;
+}
+
+header .buttons button,
+header input[type="submit"] {
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+header .paragraphs button {
+    margin-top: 30px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+
+@media (max-width: 800px) {
+    .paragraphs h1 {
+        font-size: 3rem;
+        min-width: 280px;
+    }
+
+    .paragraphs {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 350px) {
+    .paragraphs {
+        margin-left: 10px;
+    }
+
+    form {
+        right: 20px;
+    }
+}

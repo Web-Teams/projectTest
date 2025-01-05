@@ -1,0 +1,87 @@
+.closeIcon {
+    display: flex;
+    justify-content: end;
+}
+
+.closeIcon i {
+    color: #FFFFFF;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.displayNone {
+    display: none;
+}
+
+#login {
+    width: 350px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 40px;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(30, 27, 27, 0.456);
+    border-radius: 30px;
+
+}
+
+#loginHeader {
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+input,
+#submit {
+    width: 300px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 10px;
+    padding-left: 20px;
+
+}
+
+#submit {
+    background-image: linear-gradient(to right, rgb(197, 39, 39), rgb(11, 12, 73));
+    color: white;
+    font-size: 16px;
+
+}
+
+#submit:hover {
+    background-image: linear-gradient(#357AE8, #357AE8)
+}
+
+/* #forgetPassword{
+    font-size: 20px;
+    margin-left: 90px ;
+    color: red;
+} */
+#buttonForSignUp {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#buttonForSignUp a {
+    color: #357AE8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#buttonForSignUp a:hover {
+    text-decoration: underline;
+}

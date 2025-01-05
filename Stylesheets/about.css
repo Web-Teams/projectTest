@@ -1,0 +1,24 @@
+#aboutSection {
+    /* background-color: rgba(255, 255, 255, 0.082); */
+    margin: 2% 10%;
+    margin-bottom: 3%;
+}
+
+#aboutSection h2 {
+    font-family: 'Aguafina Script', cursive;
+    color: white;
+    font-size: 6vw;
+    margin: 0;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px #000;
+
+}
+
+#aboutSection p {
+    color: white;
+    font-size: 1.37vw;
+    margin: 0;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px #000;
+
+}

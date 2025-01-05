@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+header {
+    height: 20vh;
+}
+
+main#container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.bookingDiv {
+    width: 60%;
+    height: 95%;
+    padding: 20px;
+    padding-top: 0;
+    margin-bottom: 20px;
+}
+
+.form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.dateAndTime,
+.fullNameDiv,
+.customerContactDiv {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.dateAndTime input {
+    width: 200px;
+}
+
+#container label {
+    margin-right: 10px;
+}
+
+.numberOfPeople {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.numberOfPeople input[type="number"] {
+    margin-left: 10px;
+    width: 300px;
+}
+
+.fullNameDiv #firstName,
+.customerContactDiv #email {
+    margin-right: 30px;
+}
+
+
+.comments {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.comments textarea {
+    width: 80%;
+    height: 50px;
+    resize: vertical;
+}
+
+
+#container button {
+    padding: 10px 20px;
+    background-color: orange;
+    width: 60%;
+    margin-left: 20%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.bookingImage {
+    width: 40%;
+    height: 100%;
+    border-radius: 8px;
+}

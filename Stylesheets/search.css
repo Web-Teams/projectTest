@@ -1,0 +1,180 @@
+#searchContainer {
+
+    width: 400px;
+    height: 250px;
+    overflow: auto;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.616);
+    right: 300px;
+    top: 100px;
+    padding: 10px;
+
+
+
+}
+
+.visibleSearch {
+    display: none;
+}
+
+#searchInput {
+    border-radius: 50px;
+    width: 200px;
+}
+
+.searchContentContainer {
+    background-color: rgba(14, 14, 13, 0.192);
+    width: 360px;
+
+}
+
+.searchDescriptionWImg {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 3px;
+    height: 80px;
+}
+
+.searchImg {
+    width: 40px;
+    height: 40px;
+    padding-top: 2px;
+}
+
+.searchTitlePriceContainer {
+    margin: 5px
+}
+
+.searchTitle {
+
+    color: white;
+    font-style: italic;
+
+}
+
+.searchPrice {
+    font-size: smaller;
+    font-style: italic;
+    color: white;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.searchPopUpGrandContainer {
+
+
+    background-color: beige;
+    width: 252px;
+    height: fit-content;
+    /* background-color: red; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    cursor: default;
+}
+
+
+
+
+.searchPopUpParentWImg {}
+
+
+.searchPopUpImg {
+    width: 246px;
+    height: 215px;
+    border-radius: 33px;
+    border: 1px #A4150D solid;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+}
+
+
+.searchPopUpDesTitlePrice {
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    width: 218px;
+    height: 104px;
+    background: linear-gradient(180deg, white 0%, #999999 100%);
+    border-radius: 14px;
+    border: 1px #A4150D solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchPopUpTitle {
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.searchPopUpDescription {
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.searchPopUpPrice {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-family: Red Hat Text;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin: auto;
+}
+
+.searchPopUpBtn {
+    font-weight: bolder;
+
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: black;
+    cursor: pointer;
+    color: orange;
+    box-shadow: 0px 0px 12px 5px;
+    padding: 5px;
+}
+
+
+.searchPopUpBtn:hover {
+
+    background-color: orange;
+    color: white;
+}
+
+
+
+
+.searchPopUpBtnContainer {
+    text-align: end;
+    margin: 5px;
+
+}

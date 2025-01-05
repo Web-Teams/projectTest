@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Stylesheets/footer.css" />
+    <link rel="stylesheet" href="Stylesheets/header.css" />
+    <link rel="stylesheet" href="Stylesheets/about.css" />
+    <link rel="stylesheet" href="Sign Up Page/signUpPage.css">
+    <link rel="stylesheet" href="Login Page/loginPage.css">
+    <link rel="stylesheet" href="Stylesheets/booking.css" />
+    <link rel="stylesheet" href="Stylesheets/search.css">
+    <link rel="stylesheet" href="Stylesheets/cart.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h2 class="logoImageContainer">
+                <img class="logoImage" src="footer imgs/loggoTest.png">
+            </h2>
+            <ul>
+                <li>
+                    <a id="homeLink" href="home.html">Home</a>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <!-- <li><a href="#">Blog</a></li> -->
+                <li>
+                    <a id="contactLink" href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a id="contactLink" class="active" href="booking.html">Booking</a>
+                </li>
+                <li>
+                    <a id="contactLink" href="checkPage.html">CheckOut</a>
+                </li>
+            </ul>
+            <div class="buttons">
+                <i onclick="displaySearch()" class="fa-solid fa-magnifying-glass"></i>
+
+
+
+                <div id="searchContainer" class="visibleSearch">
+
+                    <input oninput="searchInputWords(this.value)" id="searchInput" type="search">
+
+                    <select onchange="searchInputWords('')" name="search" id="selectCategoryId">
+
+                        <option value="All">All</option>
+                        <option value="Main Courses">Main Courses</option>
+                        <option value="Appetizers">Appetizers</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Desserts">Desserts</option>
+
+                    </select>
+                    <div id="containCreatedElementsSearch">
+
+                    </div>
+
+                </div>
+                <i onclick="toggleCart()" id="cartBtn" class="fa-solid fa-cart-shopping"></i>
+                <button id="signInBtn" onclick="toggleSignInForm()" type="submit">Sign in</button>
+                <div id="userNameContainer" class="displayNone">
+                    <span class="userNameSpan">
+                        <span> <i class="fa-solid fa-user"></i>
+                            <i id="logoutUser" class="fa-solid fa-right-from-bracket" onclick="logoutUser()"></i></span>
+
+                        <p id="userName"> Ammar Ahmed Shafiq</p>
+
+                    </span>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <aside>
+        <div class="butefelAlert displayNone" id="butefelAlert">
+            <button onclick="removeButfelAlert()" class="closeButfelAlert">X</button>
+            <p>You must login to add food to cart</p>
+        </div>
+
+
+    </aside>
+    <aside>
+        <div id="cart1" class="cart ">
+
+            <button class="cartCancelButton" onclick="removecart() "><i class="fa-solid fa-xmark"></i></button>
+            <div id="cartBody">
+                <div class="cartItemsContainer">
+                    <div class="cartItem" data-id="25">
+                        <img class="myitemImage" src="./home imgs/Burger_With_Neon.jpg" alt="">
+                        <p class="itemName">Burger Name</p>
+
+                        <div class="plusAndMinus">
+                            <i class="fa-solid fa-plus"></i>
+                            <p class="amount"> 1 </p>
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                        <p class="itemPrice">500 $</p>
+                        <button class="deleteItem"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button class="cartCancelButton" onclick="removecart() "><i class="fa-solid fa-xmark"></i></button> -->
+
+            <!-- 
+          <div class="firstItem" data-id="25">
+          <img class="myitemImage" src="./home imgs/Burger_With_Neon.jpg" alt="">
+          <p class="itemName">Burger Name</p>
+          <p> 1 </p>  ----------------
+          <p class="itemPrice">500 $</p>
+         </div>
+          <hr>
+        
+         <div class="firstItem">
+          <img class="myitemImage" src="./home imgs/Burger_With_Neon.jpg" alt="">
+          <p class="itemName">Burger Name</p>
+          <p class="itemPrice">500 $</p>
+         </div>
+        
+          <hr> -->
+
+
+        </div>
+
+    </aside>
+    <aside>
+
+        <!-- Login Page -->
+        <div id="login" class="invisible">
+            <div class="closeIcon" id="signInCloseBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div id="loginHeader">
+                <h1>Welcome Back !</h1>
+                <h3>Enter your credenital for login</h3>
+            </div>
+
+            <form id="loginForm" method="post" novalidate>
+
+                <input type="email" id="loginemail" placeholder="Enter your email" required>
+                <br>
+
+                <input type="password" id="loginpassword" placeholder="Password" required>
+                <br>
+                <button id="submit" type="submit">Login </button>
+                <p id="buttonForSignUp">If You Don't Have an account <a onclick="toggleSignUpForm()" href="#">signUp</a>
+                </p>
+                <br>
+            </form>
+
+        </div>
+
+
+
+        <!-- Sign Up Page -->
+        <div id="signUp" class="invisible">
+            <div class="closeIcon" id="signUpCloseBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div id="signUpHeader">
+                <h1>Sign Up</h1>
+                <h3>Create your account</h3>
+            </div>
+
+            <form method="post" id="myForm" novalidate>
+
+                <!-- <label for="fName">First Name</label> -->
+                <input type="text" id="fName" placeholder="First Name" required>
+                <br>
+
+                <!-- <label for="lName">Last Name</label> -->
+                <input type="text" id="lName" placeholder="Last Name" required>
+                <br>
+
+                <!-- <label for="email">Email </label> -->
+                <input type="email" id="signUpemail" placeholder=" Email" required>
+                <br>
+
+                <!-- <label for="password">Password</label> -->
+                <input type="password" id="signUpPassword" placeholder="Password" required>
+                <br>
+
+
+                <button id="submit" onclick="" type="submit">Sign Up</button>
+
+            </form>
+
+            <p>OR</p>
+
+            <button onclick="" id="easySubmit" type="button">
+                <img id="googleIcon" src="./Sign Up Page/google_icon.png" alt=""> Login with Google </button>
+
+        </div>
+
+
+    </aside>
+
+    <aside>
+        <div class="searchPopUpGrandContainer visibleSearch">
+
+            <div class="searchPopUpBtnContainer">
+                <button onclick="closePopUp()" class="searchPopUpBtn">X</button>
+            </div>
+            <div class="searchPopUpParentWImg">
+
+                <img class="searchPopUpImg" src="https://via.placeholder.com/217x231" alt="" />
+
+                <div class="searchPopUpDesTitlePrice>">
+
+                    <h2 class="searchPopUpTitle">Grilled Salmon with Lemon Dill Sauce</h2>
+
+                    <div class="searchPopUpDescription">Freshly grilled salmon fillet topped with a creamy lemon dill
+                        sauce,
+                        served
+                        with asparagus and
+                        roasted
+                        potatoes.</div>
+
+                    <p class="searchPopUpPrice">$ 10.00</p>
+
+                    <button class="searchPopUpBtn"> Add to cart</button>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </aside>
+
+
+    <main id="container"></main>
+
+    <footer>
+        <div id="flexParent">
+            <!-- left -->
+            <div id="leftWords">
+                <img class="footer-logo" src="footer imgs/loggoTest.png" alt="">
+
+                <p>Our wondrefull resturant <br /></p>
+            </div>
+
+            <!-- center -->
+            <div id="centerWords">
+                Weekly offer <br />
+                pre - order options <br />
+                Book a table
+            </div>
+            <!-- third -->
+            <div id="thirdWords">
+                Yosry ragheb street <br />
+                Assuit city <br />
+                &copy; 2024 all right reserved
+            </div>
+            <!-- last -->
+            <div id="contactWords">
+                Get in touch <br />
+                <span>
+                    <img class="phone" src="./footer imgs/Phone.png" alt="" />
+                    <a href="tel"> 010-1010-1010</a></span><br />
+
+                <a href="#">
+                    <img src="./footer imgs/Facebook Circled.png" alt="" /></a>
+                <a href="#">
+                    <img src="./footer imgs/Twitter Circled.png" alt="" /></a>
+                <a href="#">
+                    <img src="./footer imgs/Instagram Circle.png" alt="" /></a>
+                <a href="#">
+                    <img src="./footer imgs/LinkedIn Circled.png" alt="" /></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="booking.js"></script>
+    <script src="loginAndRegister.js"></script>
+    <script src="search.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>
