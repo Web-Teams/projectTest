@@ -15,24 +15,14 @@ header {
   top: 0;
   z-index: 100;
   background-color: rgba(50, 50, 50, 0.9);
-  width: 80%;
-  margin: 20px 10%;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
   border-radius: 20px;
   padding: 20px 10px;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
-  /* font-size: 1.3rem; */
-  /* color: white; */
-
 }
 
 nav {
-  /* background-color: rgba(50, 50, 50, 0.9); */
-  /* margin: 20px 10%; */
-  /* border-radius: 20px; */
-  /* padding: 20px 10px; */
-
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -45,31 +35,21 @@ main {
   background-image: url("../home imgs/Burger_With_Neon.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 134vh;
+  background-position: center;
+  min-height: 100vh;
   overflow: hidden;
-
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 120px;
 }
 
 main .paragraphs h1 {
   font-family: cursive, Arial, Helvetica, sans-serif;
-  /* font-size: 4rem;
-  max-width: 35%;
-  margin-top: 100px;
-  border-radius: 10px;
-  color: whitesmoke;
-  background-color: rgb(0, 0, 0, 0.8);
-  width: fit-content;
-  cursor: default; */
 }
 
 main .paragraphs p {
   cursor: default;
-  /* margin-top: 15px;
-  font-size: 2rem;
-  color: white;
-  background-color: rgb(0, 0, 0, 0.8);
-  width: fit-content;
-  padding: 5px; */
 }
 
 header nav h2 {
@@ -96,12 +76,10 @@ header .logoImageContainer {
 }
 
 header .logoImage {
-
   width: 110px;
   position: absolute;
   left: 10px;
   top: -36px;
-
 }
 
 header nav ul li a {
@@ -171,6 +149,7 @@ header input[type="submit"] {
 
 main .paragraphs {
   margin-left: 80px;
+  max-width: 600px;
 }
 
 main .paragraphs button {
@@ -181,41 +160,8 @@ main .paragraphs button {
   transition: 0.3s;
 }
 
-@media (max-width: 800px) {
-  .paragraphs h1 {
-    font-size: 3rem;
-    min-width: 280px;
-  }
-
-  .paragraphs {
-    margin-left: 30px;
-  }
-}
-
-@media (max-width: 600px) {
-  nav {
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 350px) {
-  .paragraphs {
-    margin-left: 10px;
-  }
-
-  form {
-    right: 20px;
-  }
-}
-
 div.paragraphs {
   margin-top: 145px;
-
 }
 
 div.paragraphs h1,
@@ -226,4 +172,186 @@ div.paragraphs p {
   max-width: 28%;
   font-weight: bold;
   font-family: cursive, Arial, Helvetica, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  main .paragraphs {
+    margin-left: 60px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 32px;
+    max-width: 35%;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding-top: 100px;
+  }
+  
+  main .paragraphs {
+    margin-left: 50px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 28px;
+    max-width: 40%;
+  }
+  
+  div.paragraphs {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 80px;
+    justify-content: center;
+  }
+  
+  main .paragraphs {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 24px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  div.paragraphs {
+    margin-top: 100px;
+  }
+  
+  #btnGoMenu {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding-top: 70px;
+  }
+  
+  main .paragraphs {
+    padding: 0 15px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 20px;
+  }
+  
+  div.paragraphs {
+    margin-top: 80px;
+  }
+  
+  #btnGoMenu {
+    font-size: 1.1rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 60px;
+  }
+  
+  main .paragraphs {
+    padding: 0 10px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 18px;
+  }
+  
+  div.paragraphs {
+    margin-top: 70px;
+  }
+  
+  #btnGoMenu {
+    font-size: 1rem;
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    padding-top: 50px;
+  }
+  
+  main .paragraphs {
+    padding: 0 8px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 16px;
+  }
+  
+  div.paragraphs {
+    margin-top: 60px;
+  }
+  
+  #btnGoMenu {
+    font-size: 0.9rem;
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 350px) {
+  main {
+    padding-top: 45px;
+  }
+  
+  main .paragraphs {
+    padding: 0 5px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 14px;
+  }
+  
+  div.paragraphs {
+    margin-top: 50px;
+  }
+  
+  #btnGoMenu {
+    font-size: 0.8rem;
+    padding: 3px 5px;
+  }
+}
+
+@media (max-width: 300px) {
+  main {
+    padding-top: 40px;
+  }
+  
+  main .paragraphs {
+    padding: 0 3px;
+  }
+  
+  div.paragraphs h1,
+  div.paragraphs p {
+    font-size: 12px;
+  }
+  
+  div.paragraphs {
+    margin-top: 45px;
+  }
+  
+  #btnGoMenu {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+  }
 }

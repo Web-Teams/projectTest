@@ -11,8 +11,11 @@ header {
 
 main#container {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     display: flex;
+    gap: 30px;
+    padding: 20px 0;
 }
 
 .bookingDiv {
@@ -41,6 +44,7 @@ main#container {
     width: 100%;
     display: flex;
     margin-bottom: 20px;
+    gap: 20px;
 }
 
 .dateAndTime input {
@@ -66,7 +70,6 @@ main#container {
     margin-right: 30px;
 }
 
-
 .comments {
     width: 100%;
     margin-bottom: 20px;
@@ -80,7 +83,6 @@ main#container {
     resize: vertical;
 }
 
-
 #container button {
     padding: 10px 20px;
     background-color: orange;
@@ -92,9 +94,172 @@ main#container {
     border-radius: 5px;
 }
 
-
 .bookingImage {
     width: 40%;
     height: 100%;
     border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    main#container {
+        width: 95%;
+        gap: 20px;
+    }
+    
+    .bookingDiv {
+        padding: 15px;
+    }
+    
+    .dateAndTime input {
+        width: 180px;
+    }
+    
+    .numberOfPeople input[type="number"] {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    main#container {
+        flex-direction: column;
+        width: 90%;
+        gap: 15px;
+    }
+    
+    .bookingDiv {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .bookingImage {
+        width: 100%;
+        height: 200px;
+        order: -1;
+    }
+    
+    .dateAndTime,
+    .fullNameDiv,
+    .customerContactDiv {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .dateAndTime input {
+        width: 100%;
+    }
+    
+    .numberOfPeople input[type="number"] {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .fullNameDiv #firstName,
+    .customerContactDiv #email {
+        margin-right: 0;
+    }
+    
+    .comments {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comments textarea {
+        width: 100%;
+    }
+    
+    #container button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    main#container {
+        width: 95%;
+        padding: 10px 0;
+    }
+    
+    .bookingDiv {
+        padding: 10px;
+    }
+    
+    #container input {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .bookingImage {
+        height: 150px;
+    }
+    
+    #container button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    main#container {
+        width: 98%;
+        padding: 5px 0;
+    }
+    
+    .bookingDiv {
+        padding: 8px;
+    }
+    
+    #container input {
+        padding: 6px;
+        font-size: 13px;
+    }
+    
+    .bookingImage {
+        height: 120px;
+    }
+    
+    #container button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .dateAndTime,
+    .fullNameDiv,
+    .customerContactDiv {
+        margin-bottom: 15px;
+    }
+    
+    .numberOfPeople {
+        margin-bottom: 15px;
+    }
+    
+    .comments {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 350px) {
+    main#container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .bookingDiv {
+        padding: 5px;
+    }
+    
+    #container input {
+        padding: 5px;
+        font-size: 12px;
+    }
+    
+    .bookingImage {
+        height: 100px;
+    }
+    
+    #container button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
 }

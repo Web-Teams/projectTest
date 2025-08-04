@@ -8,6 +8,9 @@
 
 .contact-section {
     margin: 50px 10px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
 .contact-section .div2 {
@@ -15,8 +18,9 @@
     display: flex;
     /* background-image: linear-gradient(to right, rgb(93, 20, 20), rgb(11, 12, 73)); */
     background-image: linear-gradient(to right, #240804, #440508, #0A0B1F, #0B0E15);
-
     justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .contact-section .map {
@@ -62,4 +66,158 @@
 .contact-section .phone-number:hover {
     background-color: orange;
     color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-section {
+        padding: 0 15px;
+    }
+    
+    .contact-section .div2 {
+        height: 50vh;
+    }
+    
+    .contact-section .contact-container {
+        padding: 40px;
+    }
+    
+    .contact-section h1 {
+        font-size: 32px;
+    }
+    
+    .contact-section p {
+        font-size: 16px;
+    }
+    
+    .contact-section .phone-number {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 30px auto;
+        padding: 0 10px;
+    }
+    
+    .contact-section .div2 {
+        flex-direction: column;
+        height: auto;
+        min-height: 60vh;
+    }
+    
+    .contact-section .map {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .contact-section .contact-container {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .contact-section h1 {
+        font-size: 28px;
+    }
+    
+    .contact-section p {
+        font-size: 14px;
+    }
+    
+    .contact-section .phone-number {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-section {
+        margin: 20px auto;
+    }
+    
+    .contact-section .div2 {
+        min-height: 50vh;
+    }
+    
+    .contact-section .map {
+        height: 150px;
+    }
+    
+    .contact-section .contact-container {
+        padding: 25px 15px;
+    }
+    
+    .contact-section h1 {
+        font-size: 24px;
+    }
+    
+    .contact-section p {
+        font-size: 13px;
+    }
+    
+    .contact-section .phone-number {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        margin: 15px auto;
+        padding: 0 5px;
+    }
+    
+    .contact-section .div2 {
+        min-height: 45vh;
+    }
+    
+    .contact-section .map {
+        height: 120px;
+    }
+    
+    .contact-section .contact-container {
+        padding: 20px 10px;
+    }
+    
+    .contact-section h1 {
+        font-size: 20px;
+    }
+    
+    .contact-section p {
+        font-size: 12px;
+    }
+    
+    .contact-section .phone-number {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 350px) {
+    .contact-section .div2 {
+        min-height: 40vh;
+    }
+    
+    .contact-section .map {
+        height: 100px;
+    }
+    
+    .contact-section .contact-container {
+        padding: 15px 5px;
+    }
+    
+    .contact-section h1 {
+        font-size: 18px;
+    }
+    
+    .contact-section p {
+        font-size: 11px;
+    }
+    
+    .contact-section .phone-number {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
 }

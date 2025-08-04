@@ -14,13 +14,13 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-
 }
 
 nav {
     background-color: rgba(50, 50, 50, 0.9);
-    width: 80%;
-    margin: 20px 10%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
     border-radius: 20px;
     padding: 20px 10px;
     display: flex;
@@ -28,8 +28,8 @@ nav {
     align-items: center;
     font-size: 1.3rem;
     color: white;
+    position: relative;
 }
-
 
 .header h1 {
     font-family: cursive, Arial, Helvetica, sans-serif;
@@ -64,20 +64,20 @@ header nav h2:hover {
 
 header .logoImageContainer {
     position: relative;
+    z-index: 102;
 }
 
 header .logoImage {
-
     width: 110px;
     position: absolute;
     left: 10px;
     top: -36px;
-
 }
 
 header nav ul {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 header nav ul li {
@@ -156,34 +156,515 @@ header .paragraphs button {
     transition: 0.3s;
 }
 
-@media (max-width: 800px) {
-    .paragraphs h1 {
-        font-size: 3rem;
-        min-width: 280px;
-    }
+/* Hamburger menu for mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 102;
+    padding: 5px;
+}
 
-    .paragraphs {
-        margin-left: 30px;
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Modern Navbar Styles for Home Page */
+.modern-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #240804 0%, #440508 40%, #0A0B1F 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  padding: 0.5rem 2rem;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 100;
+}
+
+.logoImageContainer {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  width: 60px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.brand-title {
+  font-family: 'Aguafina Script', cursive, Arial, Helvetica, sans-serif;
+  font-size: 2.2rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px #00000060;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: relative;
+}
+.icon-btn:hover, .icon-btn:focus {
+  color: #ff9800;
+  background: rgba(255,255,255,0.08);
+}
+
+.sign-in-btn {
+  background: linear-gradient(90deg, #A4150D 0%, #0C163F 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.sign-in-btn:hover, .sign-in-btn:focus {
+  background: linear-gradient(90deg, #0C163F 0%, #A4150D 100%);
+  color: #ff9800;
+}
+.sign-in-text {
+  display: inline-block;
+}
+
+/* Hamburger Styles */
+.hamburger, .modern-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 102;
+  margin-left: 0.5rem;
+  transition: background 0.2s;
+}
+.hamburger span, .modern-hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamburger.active span:nth-child(1), .modern-hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger.active span:nth-child(2), .modern-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3), .modern-hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Menu */
+.modern-mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg, #240804 0%, #0A0B1F 100%);
+  box-shadow: -2px 0 16px 0 rgba(0,0,0,0.18);
+  padding-top: 90px;
+  z-index: 101;
+  transition: right 0.3s;
+  border-radius: 0 0 0 32px;
+}
+.modern-mobile-menu.active {
+  display: flex;
+  right: 0;
+}
+.modern-mobile-menu li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+.modern-mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px 0 0 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.modern-mobile-menu a.active, .modern-mobile-menu a:hover, .modern-mobile-menu a:focus {
+  background: #ff9800;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .modern-navbar {
+    width: 98%;
+    padding: 0.5rem 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .modern-navbar {
+    width: 100%;
+    margin: 10px 0;
+    padding: 0.5rem 0.5rem;
+  }
+  .navbar-center {
+    display: none;
+  }
+  .modern-hamburger {
+    display: flex;
+  }
+  .modern-mobile-menu {
+    display: flex;
+    right: -100%;
+  }
+}
+@media (max-width: 600px) {
+  .modern-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0.2rem;
+  }
+  .logoImage {
+    width: 48px;
+  }
+  .sign-in-btn {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .icon-btn {
+    font-size: 1.1rem;
+    padding: 0.4rem;
+  }
+  .modern-mobile-menu {
+    width: 200px;
+    padding-top: 70px;
+  }
+}
+@media (max-width: 400px) {
+  .modern-navbar {
+    padding: 0.3rem 0.1rem;
+  }
+  .modern-mobile-menu {
+    width: 150px;
+    padding-top: 60px;
+  }
+  .logoImage {
+    width: 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        width: 95%;
+        padding: 15px 10px;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    header nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(50, 50, 50, 0.95);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 80px;
+        transition: 0.3s;
+        z-index: 101;
+        backdrop-filter: blur(10px);
+    }
+    
+    header nav ul.active {
+        right: 0;
+    }
+    
+    header nav ul li {
+        margin: 15px 0;
+    }
+    
+    header .buttons {
+        display: flex;
+        align-items: center;
+    }
+    
+    header .logoImage {
+        width: 90px;
+        top: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+    
+    header nav ul {
+        width: 220px;
+    }
+    
+    header nav ul li {
+        margin: 12px 0;
+    }
+    
+    header .logoImage {
+        width: 80px;
+        top: -25px;
     }
 }
 
 @media (max-width: 600px) {
     nav {
-        justify-content: center;
-        flex-direction: column;
+        width: 98%;
+        margin: 10px auto;
+        padding: 10px 15px;
     }
+    
+    header nav ul {
+        width: 200px;
+    }
+    
+    header .buttons {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    header .buttons i {
+        padding-right: 8px;
+        font-size: 1.1rem;
+    }
+    
+    header button {
+        font-size: 1.1rem;
+        padding: 4px 8px;
+    }
+    
+    header .logoImage {
+        width: 80px;
+        top: -25px;
+    }
+}
 
-    nav ul {
-        flex-direction: column;
+@media (max-width: 480px) {
+    nav {
+        padding: 8px 10px;
+    }
+    
+    header nav ul {
+        width: 180px;
+        padding-top: 60px;
+    }
+    
+    header nav ul li {
+        margin: 12px 0;
+    }
+    
+    header .buttons {
+        gap: 3px;
+    }
+    
+    header .buttons i {
+        padding-right: 5px;
+        font-size: 1rem;
+    }
+    
+    header button {
+        font-size: 1rem;
+        padding: 3px 6px;
+    }
+    
+    header .logoImage {
+        width: 70px;
+        top: -20px;
+    }
+}
+
+@media (max-width: 400px) {
+    nav {
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px 8px;
+    }
+    
+    header nav ul {
+        width: 160px;
+        padding-top: 50px;
+    }
+    
+    header nav ul li {
+        margin: 10px 0;
+    }
+    
+    header .buttons {
+        gap: 2px;
+    }
+    
+    header .buttons i {
+        padding-right: 3px;
+        font-size: 0.9rem;
+    }
+    
+    header button {
+        font-size: 0.9rem;
+        padding: 2px 4px;
+    }
+    
+    header .logoImage {
+        width: 60px;
+        top: -15px;
+    }
+    
+    .hamburger span {
+        width: 20px;
+        height: 2px;
     }
 }
 
 @media (max-width: 350px) {
-    .paragraphs {
-        margin-left: 10px;
+    nav {
+        width: 100%;
+        margin: 3px 0;
+        padding: 3px 5px;
     }
+    
+    header nav ul {
+        width: 140px;
+        padding-top: 40px;
+    }
+    
+    header nav ul li {
+        margin: 8px 0;
+    }
+    
+    header .buttons {
+        gap: 1px;
+    }
+    
+    header .buttons i {
+        padding-right: 2px;
+        font-size: 0.8rem;
+    }
+    
+    header button {
+        font-size: 0.8rem;
+        padding: 1px 3px;
+    }
+    
+    header .logoImage {
+        width: 50px;
+        top: -10px;
+    }
+    
+    .hamburger span {
+        width: 18px;
+        height: 2px;
+        margin: 2px 0;
+    }
+}
 
-    form {
-        right: 20px;
+@media (max-width: 300px) {
+    nav {
+        width: 100%;
+        margin: 2px 0;
+        padding: 2px 3px;
+    }
+    
+    header nav ul {
+        width: 120px;
+        padding-top: 30px;
+    }
+    
+    header nav ul li {
+        margin: 6px 0;
+    }
+    
+    header .buttons {
+        gap: 1px;
+    }
+    
+    header .buttons i {
+        padding-right: 1px;
+        font-size: 0.7rem;
+    }
+    
+    header button {
+        font-size: 0.7rem;
+        padding: 1px 2px;
+    }
+    
+    header .logoImage {
+        width: 40px;
+        top: -8px;
+    }
+    
+    .hamburger span {
+        width: 16px;
+        height: 1px;
+        margin: 1px 0;
     }
 }

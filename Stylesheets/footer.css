@@ -35,6 +35,9 @@ footer p {
   padding: 3vh 0;
   line-height: 2;
   font-size: 1.25vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3vh 20px;
 }
 
 #leftWords {
@@ -72,4 +75,152 @@ footer img {
 
 footer .footer-logo {
   width: 10vw;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #flexParent {
+    font-size: 1.5vw;
+    padding: 3vh 15px;
+  }
+  
+  footer .footer-logo {
+    width: 12vw;
+  }
+  
+  footer img {
+    width: 3vw;
+  }
+  
+  .phone {
+    width: 2.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  #flexParent {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 2vw;
+    padding: 4vh 20px;
+  }
+  
+  #leftWords,
+  #centerWords,
+  #thirdWords,
+  #contactWords {
+    text-align: center;
+  }
+  
+  footer .footer-logo {
+    width: 15vw;
+  }
+  
+  footer img {
+    width: 4vw;
+  }
+  
+  .phone {
+    width: 3vw;
+  }
+}
+
+@media (max-width: 600px) {
+  #flexParent {
+    font-size: 2.5vw;
+    padding: 4vh 15px;
+    gap: 15px;
+  }
+  
+  footer .footer-logo {
+    width: 18vw;
+  }
+  
+  footer img {
+    width: 5vw;
+  }
+  
+  .phone {
+    width: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  #flexParent {
+    font-size: 3vw;
+    padding: 4vh 10px;
+    gap: 12px;
+  }
+  
+  footer .footer-logo {
+    width: 20vw;
+  }
+  
+  footer img {
+    width: 6vw;
+  }
+  
+  .phone {
+    width: 5vw;
+  }
+}
+
+@media (max-width: 400px) {
+  #flexParent {
+    font-size: 3.2vw;
+    padding: 3vh 8px;
+    gap: 10px;
+  }
+  
+  footer .footer-logo {
+    width: 22vw;
+  }
+  
+  footer img {
+    width: 6.5vw;
+  }
+  
+  .phone {
+    width: 5.5vw;
+  }
+}
+
+@media (max-width: 350px) {
+  #flexParent {
+    font-size: 3.5vw;
+    padding: 3vh 5px;
+    gap: 8px;
+  }
+  
+  footer .footer-logo {
+    width: 25vw;
+  }
+  
+  footer img {
+    width: 7vw;
+  }
+  
+  .phone {
+    width: 6vw;
+  }
+}
+
+@media (max-width: 300px) {
+  #flexParent {
+    font-size: 4vw;
+    padding: 2vh 3px;
+    gap: 6px;
+  }
+  
+  footer .footer-logo {
+    width: 28vw;
+  }
+  
+  footer img {
+    width: 7.5vw;
+  }
+  
+  .phone {
+    width: 6.5vw;
+  }
 }

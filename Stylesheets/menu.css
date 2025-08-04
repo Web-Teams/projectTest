@@ -5,6 +5,9 @@
     justify-content: space-evenly;
     align-items: center;
     margin: 7vh 10px 60px 10px;
+    max-width: 1200px;
+    margin: 7vh auto 60px auto;
+    padding: 0 20px;
 }
 
 .menuButton {
@@ -125,6 +128,9 @@
 
 #catogeries {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .menu {
@@ -133,6 +139,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .menuItemsDetails {
@@ -205,4 +213,235 @@
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
 
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #flexContainer {
+        padding: 0 15px;
+    }
+    
+    .menu {
+        gap: 15px;
+    }
+    
+    .itemDetailContainer {
+        width: 230px;
+        height: 285px;
+    }
+    
+    .itemImage {
+        width: 230px;
+        height: 200px;
+    }
+    
+    .itemDetails {
+        width: 200px;
+        height: 95px;
+    }
+}
+
+@media (max-width: 768px) {
+    #flexContainer {
+        margin: 5vh auto 40px auto;
+        padding: 0 10px;
+    }
+    
+    .menu {
+        gap: 10px;
+        padding: 15px 0;
+    }
+    
+    .itemDetailContainer {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .itemImage {
+        width: 200px;
+        height: 175px;
+    }
+    
+    .itemDetails {
+        width: 175px;
+        height: 85px;
+        left: 1%;
+    }
+    
+    .itemDetails h2 {
+        font-size: 10px;
+    }
+    
+    .itemDetails div {
+        font-size: 10px;
+    }
+    
+    .itemDetails p {
+        font-size: 20px;
+    }
+    
+    .menuButton {
+        width: 100px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+    
+    .menuButton-active,
+    .menuButton:hover {
+        width: 100px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    #flexContainer {
+        margin: 4vh auto 30px auto;
+        padding: 0 5px;
+    }
+    
+    .menu {
+        gap: 8px;
+        padding: 10px 0;
+    }
+    
+    .itemDetailContainer {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .itemImage {
+        width: 180px;
+        height: 155px;
+    }
+    
+    .itemDetails {
+        width: 155px;
+        height: 75px;
+        padding: 8px;
+    }
+    
+    .itemDetails h2 {
+        font-size: 9px;
+    }
+    
+    .itemDetails div {
+        font-size: 9px;
+    }
+    
+    .itemDetails p {
+        font-size: 18px;
+    }
+    
+    .menuButton {
+        width: 90px;
+        height: 40px;
+        font-size: 0.8rem;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .menuButton-active,
+    .menuButton:hover {
+        width: 90px;
+        height: 40px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    #flexContainer {
+        margin: 3vh auto 20px auto;
+    }
+    
+    .menu {
+        gap: 5px;
+        padding: 8px 0;
+    }
+    
+    .itemDetailContainer {
+        width: 160px;
+        height: 200px;
+    }
+    
+    .itemImage {
+        width: 160px;
+        height: 140px;
+    }
+    
+    .itemDetails {
+        width: 140px;
+        height: 70px;
+        padding: 6px;
+    }
+    
+    .itemDetails h2 {
+        font-size: 8px;
+    }
+    
+    .itemDetails div {
+        font-size: 8px;
+    }
+    
+    .itemDetails p {
+        font-size: 16px;
+    }
+    
+    .menuButton {
+        width: 80px;
+        height: 35px;
+        font-size: 0.7rem;
+        margin-left: 3px;
+        margin-bottom: 3px;
+    }
+    
+    .menuButton-active,
+    .menuButton:hover {
+        width: 80px;
+        height: 35px;
+        margin-left: 3px;
+        margin-bottom: 3px;
+    }
+}
+
+@media (max-width: 350px) {
+    .itemDetailContainer {
+        width: 140px;
+        height: 180px;
+    }
+    
+    .itemImage {
+        width: 140px;
+        height: 120px;
+    }
+    
+    .itemDetails {
+        width: 120px;
+        height: 65px;
+        padding: 5px;
+    }
+    
+    .itemDetails h2 {
+        font-size: 7px;
+    }
+    
+    .itemDetails div {
+        font-size: 7px;
+    }
+    
+    .itemDetails p {
+        font-size: 14px;
+    }
+    
+    .menuButton {
+        width: 70px;
+        height: 30px;
+        font-size: 0.6rem;
+    }
+    
+    .menuButton-active,
+    .menuButton:hover {
+        width: 70px;
+        height: 30px;
+    }
 }

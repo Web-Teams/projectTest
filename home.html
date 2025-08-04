@@ -23,62 +23,46 @@
 
 <body>
   <header>
-    <nav>
-      <h2 class="logoImageContainer">
-        <img class="logoImage" src="footer imgs/loggoTest.png">
-      </h2>
-      <ul>
-        <li>
-          <a class="active" id="homeLink" href="home.html">Home</a>
-        </li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <!-- <li><a href="#">Blog</a></li> -->
-        <li>
-          <a id="contactLink" href="contact.html">Contact</a>
-        </li>
-        <li>
-          <a id="contactLink" href="booking.html">Booking</a>
-        </li>
-        <li>
-          <a id="contactLink" href="checkPage.html">CheckOut</a>
-        </li>
-      </ul>
-      <div class="buttons">
-        <i onclick="displaySearch()" class="fa-solid fa-magnifying-glass"></i>
-
-
-
-        <div id="searchContainer" class="visibleSearch">
-
-          <input oninput="searchInputWords(this.value)" id="searchInput" type="search">
-
-          <select onchange="searchInputWords('')" name="search" id="selectCategoryId">
-
-            <option value="All">All</option>
-            <option value="Main Courses">Main Courses</option>
-            <option value="Appetizers">Appetizers</option>
-            <option value="Beverages">Beverages</option>
-            <option value="Desserts">Desserts</option>
-
-          </select>
-          <div id="containCreatedElementsSearch">
-
-          </div>
-
-        </div>
-        <i onclick="toggleCart()" id="cartBtn" class="fa-solid fa-cart-shopping"></i>
-        <button id="signInBtn" onclick="toggleSignInForm()" type="submit">Sign in</button>
+    <nav class="modern-navbar">
+      <div class="navbar-left">
+        <!-- <a href="home.html" class="logoImageContainer" aria-label="Home">
+          <img class="logoImage" src="footer imgs/loggoTest.png" alt="FoodField Logo">
+        </a> -->
+      </div>
+      <!-- <div class="navbar-center">
+        <span class="brand-title">FoodField</span>
+      </div> -->
+      <div class="navbar-right">
+        <button class="icon-btn" aria-label="Search" onclick="displaySearch()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="icon-btn" aria-label="Cart" onclick="toggleCart()" id="cartBtn">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+        <button class="sign-in-btn" id="signInBtn" onclick="toggleSignInForm()" type="button">
+          <i class="fa-solid fa-user"></i> <span class="sign-in-text">Sign in</span>
+        </button>
         <div id="userNameContainer" class="displayNone">
           <span class="userNameSpan">
             <span> <i class="fa-solid fa-user"></i>
               <i id="logoutUser" class="fa-solid fa-right-from-bracket" onclick="logoutUser()"></i></span>
-
             <p id="userName"> Ammar Ahmed Shafiq</p>
-
           </span>
         </div>
+        <!-- <button class="hamburger modern-hamburger" aria-label="Menu" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button> -->
       </div>
+      <ul id="mobileMenu" class="modern-mobile-menu">
+        <li><a class="active" id="homeLink" href="home.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        <li><a href="menu.html"><i class="fa-solid fa-utensils"></i> Menu</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        <li><a href="booking.html"><i class="fa-solid fa-calendar-check"></i> Booking</a></li>
+        <li><a href="checkPage.html"><i class="fa-solid fa-credit-card"></i> CheckOut</a></li>
+      </ul>
     </nav>
 
   </header>
@@ -296,6 +280,7 @@
   <script src="loginAndRegister.js"></script>
   <script src="search.js"></script>
   <script src="cart.js"></script>
+  <script src="mobile-menu.js"></script>
 </body>
 
 </html>

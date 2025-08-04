@@ -1,5 +1,4 @@
 #searchContainer {
-
     width: 400px;
     height: 250px;
     overflow: auto;
@@ -8,9 +7,8 @@
     right: 300px;
     top: 100px;
     padding: 10px;
-
-
-
+    z-index: 1000;
+    border-radius: 10px;
 }
 
 .visibleSearch {
@@ -20,38 +18,43 @@
 #searchInput {
     border-radius: 50px;
     width: 200px;
+    padding: 8px 15px;
+    border: none;
+    outline: none;
 }
 
 .searchContentContainer {
     background-color: rgba(14, 14, 13, 0.192);
     width: 360px;
-
+    border-radius: 8px;
 }
 
 .searchDescriptionWImg {
-
     display: flex;
     justify-content: start;
     align-items: center;
     margin: 3px;
     height: 80px;
+    padding: 5px;
 }
 
 .searchImg {
     width: 40px;
     height: 40px;
     padding-top: 2px;
+    border-radius: 5px;
 }
 
 .searchTitlePriceContainer {
-    margin: 5px
+    margin: 5px;
+    flex: 1;
 }
 
 .searchTitle {
-
     color: white;
     font-style: italic;
-
+    margin: 0;
+    font-size: 14px;
 }
 
 .searchPrice {
@@ -61,22 +64,7 @@
     margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .searchPopUpGrandContainer {
-
-
     background-color: beige;
     width: 252px;
     height: fit-content;
@@ -87,94 +75,448 @@
     transform: translate(-50%, -50%);
     padding: 10px;
     cursor: default;
+    z-index: 1001;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-
-
-.searchPopUpParentWImg {}
-
+.searchPopUpParentWImg {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 .searchPopUpImg {
     width: 246px;
     height: 215px;
-    border-radius: 33px;
-    border: 1px #A4150D solid;
-    /* position: absolute; */
-    top: 0;
-    left: 0;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-
 .searchPopUpDesTitlePrice {
-    position: absolute;
-    bottom: 0;
-    left: 2%;
-    width: 218px;
-    height: 104px;
-    background: linear-gradient(180deg, white 0%, #999999 100%);
-    border-radius: 14px;
-    border: 1px #A4150D solid;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    gap: 8px;
 }
 
 .searchPopUpTitle {
-    text-align: center;
     color: black;
-    font-size: 12px;
-    font-family: Arial;
-    font-weight: 700;
-    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .searchPopUpDescription {
-    text-align: center;
-    color: black;
+    color: #666;
     font-size: 12px;
-    font-family: Arial;
-    font-weight: 400;
-    word-wrap: break-word;
+    line-height: 1.4;
+    margin: 0;
 }
 
 .searchPopUpPrice {
-    text-align: center;
-    color: black;
-    font-size: 24px;
-    font-family: Red Hat Text;
-    font-weight: 700;
-    word-wrap: break-word;
-    margin: auto;
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .searchPopUpBtn {
-    font-weight: bolder;
-
+    background-color: #3498db;
+    color: white;
     border: none;
+    padding: 8px 16px;
     border-radius: 5px;
-    transition: 0.3s;
-    background-color: black;
     cursor: pointer;
-    color: orange;
-    box-shadow: 0px 0px 12px 5px;
-    padding: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
-
 
 .searchPopUpBtn:hover {
-
-    background-color: orange;
-    color: white;
+    background-color: #2980b9;
 }
 
-
-
-
 .searchPopUpBtnContainer {
-    text-align: end;
-    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #searchContainer {
+        width: 350px;
+        height: 220px;
+        right: 250px;
+    }
+    
+    .searchContentContainer {
+        width: 310px;
+    }
+    
+    .searchPopUpGrandContainer {
+        width: 220px;
+    }
+    
+    .searchPopUpImg {
+        width: 214px;
+        height: 185px;
+    }
+}
+
+@media (max-width: 768px) {
+    #searchContainer {
+        width: 300px;
+        height: 200px;
+        right: 20px;
+        top: 80px;
+    }
+    
+    .searchContentContainer {
+        width: 260px;
+    }
+    
+    #searchInput {
+        width: 180px;
+        font-size: 14px;
+    }
+    
+    .searchDescriptionWImg {
+        height: 70px;
+    }
+    
+    .searchImg {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .searchTitle {
+        font-size: 13px;
+    }
+    
+    .searchPopUpGrandContainer {
+        width: 280px;
+        padding: 15px;
+    }
+    
+    .searchPopUpImg {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .searchPopUpTitle {
+        font-size: 15px;
+    }
+    
+    .searchPopUpDescription {
+        font-size: 11px;
+    }
+    
+    .searchPopUpPrice {
+        font-size: 16px;
+    }
+    
+    .searchPopUpBtn {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    #searchContainer {
+        width: 280px;
+        height: 180px;
+        right: 10px;
+        top: 70px;
+        padding: 8px;
+    }
+    
+    .searchContentContainer {
+        width: 240px;
+    }
+    
+    #searchInput {
+        width: 160px;
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    
+    .searchDescriptionWImg {
+        height: 60px;
+        padding: 3px;
+    }
+    
+    .searchImg {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .searchTitle {
+        font-size: 12px;
+    }
+    
+    .searchPopUpGrandContainer {
+        width: 260px;
+        padding: 12px;
+    }
+    
+    .searchPopUpImg {
+        height: 160px;
+    }
+    
+    .searchPopUpTitle {
+        font-size: 14px;
+    }
+    
+    .searchPopUpDescription {
+        font-size: 10px;
+    }
+    
+    .searchPopUpPrice {
+        font-size: 15px;
+    }
+    
+    .searchPopUpBtn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #searchContainer {
+        width: 250px;
+        height: 160px;
+        right: 5px;
+        top: 60px;
+        padding: 6px;
+    }
+    
+    .searchContentContainer {
+        width: 210px;
+    }
+    
+    #searchInput {
+        width: 140px;
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    
+    .searchDescriptionWImg {
+        height: 55px;
+        padding: 2px;
+    }
+    
+    .searchImg {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .searchTitle {
+        font-size: 11px;
+    }
+    
+    .searchPopUpGrandContainer {
+        width: 240px;
+        padding: 10px;
+    }
+    
+    .searchPopUpImg {
+        height: 140px;
+    }
+    
+    .searchPopUpTitle {
+        font-size: 13px;
+    }
+    
+    .searchPopUpDescription {
+        font-size: 9px;
+    }
+    
+    .searchPopUpPrice {
+        font-size: 14px;
+    }
+    
+    .searchPopUpBtn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 400px) {
+    #searchContainer {
+        width: 220px;
+        height: 140px;
+        right: 3px;
+        top: 55px;
+        padding: 5px;
+    }
+    
+    .searchContentContainer {
+        width: 180px;
+    }
+    
+    #searchInput {
+        width: 120px;
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+    
+    .searchDescriptionWImg {
+        height: 50px;
+        padding: 1px;
+    }
+    
+    .searchImg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .searchTitle {
+        font-size: 10px;
+    }
+    
+    .searchPopUpGrandContainer {
+        width: 220px;
+        padding: 8px;
+    }
+    
+    .searchPopUpImg {
+        height: 120px;
+    }
+    
+    .searchPopUpTitle {
+        font-size: 12px;
+    }
+    
+    .searchPopUpDescription {
+        font-size: 8px;
+    }
+    
+    .searchPopUpPrice {
+        font-size: 13px;
+    }
+    
+    .searchPopUpBtn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    #searchContainer {
+        width: 200px;
+        height: 120px;
+        right: 2px;
+        top: 50px;
+        padding: 4px;
+    }
+    
+    .searchContentContainer {
+        width: 160px;
+    }
+    
+    #searchInput {
+        width: 100px;
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .searchDescriptionWImg {
+        height: 45px;
+        padding: 1px;
+    }
+    
+    .searchImg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .searchTitle {
+        font-size: 9px;
+    }
+    
+    .searchPopUpGrandContainer {
+        width: 200px;
+        padding: 6px;
+    }
+    
+    .searchPopUpImg {
+        height: 100px;
+    }
+    
+    .searchPopUpTitle {
+        font-size: 11px;
+    }
+    
+    .searchPopUpDescription {
+        font-size: 7px;
+    }
+    
+    .searchPopUpPrice {
+        font-size: 12px;
+    }
+    
+    .searchPopUpBtn {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 300px) {
+    #searchContainer {
+        width: 180px;
+        height: 100px;
+        right: 1px;
+        top: 45px;
+        padding: 3px;
+    }
+    
+    .searchContentContainer {
+        width: 140px;
+    }
+    
+    #searchInput {
+        width: 80px;
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+    
+    .searchDescriptionWImg {
+        height: 40px;
+        padding: 1px;
+    }
+    
+    .searchImg {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .searchTitle {
+        font-size: 8px;
+    }
+    
+    .searchPopUpGrandContainer {
+        width: 180px;
+        padding: 5px;
+    }
+    
+    .searchPopUpImg {
+        height: 80px;
+    }
+    
+    .searchPopUpTitle {
+        font-size: 10px;
+    }
+    
+    .searchPopUpDescription {
+        font-size: 6px;
+    }
+    
+    .searchPopUpPrice {
+        font-size: 11px;
+    }
+    
+    .searchPopUpBtn {
+        padding: 2px 4px;
+        font-size: 8px;
+    }
 }
